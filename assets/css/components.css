@@ -8,7 +8,15 @@
 /* ---- 基礎 --------------------------------------------------------------- */
 *, *::before, *::after { box-sizing: border-box; }
 
-html { -webkit-text-size-adjust: 100%; }
+html {
+  -webkit-text-size-adjust: 100%;
+  min-width: 320px;            /* 対応下限。これ以下で崩れるより横スクロールさせる */
+  color-scheme: light;
+  font-synthesis: none;        /* 偽ボールド・偽イタリックを全面禁止（vivapulse.jp より） */
+}
+
+/* 選択色。細部だが「作られている」感触に効く（vivapulse.jp より） */
+::selection { background: var(--c-gold-soft); color: var(--c-ink); }
 
 body {
   margin: 0;
@@ -30,7 +38,7 @@ h1 { font-size: var(--t-display); }
 h2 { font-size: var(--t-h2); }
 h3 { font-size: var(--t-h3); line-height: var(--lh-snug); }
 
-p, ul, ol { margin: 0 0 var(--s4); max-width: var(--measure); }
+p, ul, ol { margin: 0 0 var(--s4); max-width: var(--measure); text-wrap: pretty; }
 /* ⚠️ 見出し直後の間隔はこの順序（p の後）でなければ効かない。
    Beyond Nomad で p{margin} を先に書いて全見出しの下余白が消えた。動かさない。 */
 h2 + *, h3 + * { margin-top: var(--s4); }
