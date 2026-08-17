@@ -304,3 +304,48 @@ a:hover { color: var(--c-ink); }
 .contact__lang { display: block; font-size: var(--t-small); color: var(--c-gold-soft); }
 .btn--gold { background: var(--c-gold); color: var(--c-ink); }
 .btn--gold:hover, .btn--gold.is-hover { background: var(--c-gold-soft); }
+
+
+/* ===========================================================================
+   額と壁ラベル（アートディレクション 10-art-direction.md §1・§6-3）
+   ---------------------------------------------------------------------------
+   この家は「額装する家」である。写真は置くのではなく掛ける。
+   ⛔ ただし額を許すのは Fridon の作品だけ。部屋や風景は既存 .fig（枠なし）。
+      額が Fridon の作品にしか付かないから、額に意味が出る。
+   =========================================================================== */
+.plate { margin: 0; }
+.plate__frame {
+  border: 1px solid var(--c-border);
+  border-radius: var(--r-sm);
+  padding: var(--s2);                /* 内側のマット */
+  background: var(--c-paper);
+}
+.plate__frame img { display: block; width: 100%; height: auto; border-radius: 0; }
+.plate__label {
+  margin-top: var(--s3);
+  padding-top: var(--s3);
+  border-top: 2px solid var(--c-gold);
+  max-width: var(--measure);
+  display: grid; gap: var(--s1);
+}
+.plate__label p { margin: 0; font-size: var(--t-body); color: var(--c-ink-2); }
+.label {
+  font: var(--w-medium) var(--t-small)/var(--lh-snug) var(--f-body);
+  text-transform: uppercase;
+  letter-spacing: var(--track-label);
+  color: var(--c-ink-3);
+}
+/* 写真が届くまでの「まだ掛けていない場所」。壊れて見せない */
+.plate--empty .plate__frame {
+  background: var(--c-paper-2);
+  aspect-ratio: 4 / 5;
+  display: grid; place-items: center;
+}
+
+/* ⚠️ 既存不具合の修正（アートディレクターが検出）
+   .lede は color:var(--c-ink-2) #4A4239 を持つ。これが .band--moss #26301B の上に
+   載ると 1.9:1 で読めない。個別画面で style="color:..." を書いて回避するのは
+   実装規約3違反なので、面の側で直す。 */
+.band--moss .lede,
+.band--moss .facts__v { color: var(--c-paper); }
+.band--moss .caption, .band--moss .small { color: var(--c-gold-soft); }
