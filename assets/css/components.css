@@ -1,0 +1,244 @@
+/* ===========================================================================
+   Gamarjoba — 共通コンポーネント
+   ⛔ 同じ役割の部品を画面ごとに別実装しない。ここにあるものを使う。
+   ⛔ 値は必ず tokens.css の変数から取る。生の数値を書かない。
+   状態は 通常 / :hover / :focus-visible / 無効 / エラー の5つを全部定義する。
+   =========================================================================== */
+
+/* ---- 基礎 --------------------------------------------------------------- */
+*, *::before, *::after { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  background: var(--c-paper);
+  color: var(--c-ink);
+  font: var(--w-normal) var(--t-body)/var(--lh-body) var(--f-body);
+}
+
+/* 見出し。font-synthesis を切るのは、システムserifの偽ボールドを避けるため */
+h1, h2, h3 {
+  font-family: var(--f-display);
+  font-weight: var(--w-normal);
+  font-synthesis-weight: none;
+  line-height: var(--lh-tight);
+  margin: 0;
+  text-wrap: balance;
+}
+h1 { font-size: var(--t-display); }
+h2 { font-size: var(--t-h2); }
+h3 { font-size: var(--t-h3); line-height: var(--lh-snug); }
+
+p, ul, ol { margin: 0 0 var(--s4); max-width: var(--measure); }
+/* ⚠️ 見出し直後の間隔はこの順序（p の後）でなければ効かない。
+   Beyond Nomad で p{margin} を先に書いて全見出しの下余白が消えた。動かさない。 */
+h2 + *, h3 + * { margin-top: var(--s3); }
+:where(p, ul, ol):last-child { margin-bottom: 0; }
+
+a { color: var(--c-teal); text-underline-offset: 0.15em; }
+a:hover { color: var(--c-ink); }
+
+/* フォーカスは全部品共通。個別に消さない */
+:focus-visible {
+  outline: var(--focus-w) solid var(--focus-c);
+  outline-offset: var(--focus-offset);
+}
+
+.wrap { max-width: var(--wrap); margin-inline: auto; padding-inline: var(--wrap-pad); }
+.lede { font-size: var(--t-lede); line-height: var(--lh-snug); color: var(--c-ink-2); }
+.small, .caption { font-size: var(--t-small); color: var(--c-ink-3); }
+.num { font-variant-numeric: tabular-nums; }
+
+/* ---- ボタン ------------------------------------------------------------- */
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: var(--s2);
+  min-height: var(--ctrl-h); min-width: var(--tap);
+  padding: 0 var(--s5);
+  border: 1px solid transparent; border-radius: var(--r-md);
+  font: var(--w-medium) var(--t-label)/1 var(--f-body);
+  text-decoration: none; cursor: pointer;
+  transition: background-color .15s, border-color .15s, color .15s;
+}
+.btn--primary   { background: var(--c-clay); color: var(--c-paper); }
+.btn--primary:hover, .btn--primary.is-hover { background: #632214; }
+.btn--secondary { background: transparent; color: var(--c-ink); border-color: var(--c-border); }
+.btn--secondary:hover, .btn--secondary.is-hover { background: var(--c-paper-2); border-color: var(--c-ink); }
+.btn--quiet     { background: transparent; color: var(--c-teal); padding-inline: var(--s2); }
+.btn--quiet:hover, .btn--quiet.is-hover { color: var(--c-ink); text-decoration: underline; }
+.btn.is-focus { outline: var(--focus-w) solid var(--focus-c); outline-offset: var(--focus-offset); }
+.btn[disabled], .btn.is-disabled {
+  background: var(--c-stone); color: var(--c-ink-muted);
+  border-color: transparent; cursor: not-allowed;
+}
+/* quiet は面を持たない部品なので、無効時も面を持たせない。
+   UIカタログで発見：共通の [disabled] 規則が --c-stone の塗りを継承し、
+   透明なはずのボタンが塗りつぶしになっていた。 */
+.btn--quiet[disabled], .btn--quiet.is-disabled {
+  background: transparent; text-decoration: none;
+}
+
+/* ---- フォーム部品 -------------------------------------------------------- */
+.field { display: grid; gap: var(--s2); max-width: var(--measure); }
+.field__label { font-size: var(--t-label); font-weight: var(--w-medium); }
+.field__hint  { font-size: var(--t-small); color: var(--c-ink-3); }
+.field__error { font-size: var(--t-small); color: var(--c-err); font-weight: var(--w-medium); }
+
+.input, .select, .textarea {
+  block-size: var(--ctrl-h);        /* input と select の高さを厳密に揃える */
+  min-height: var(--ctrl-h); width: 100%;
+  padding: 0 var(--s3);
+  background: var(--c-paper);
+  color: var(--c-ink);
+  border: 1px solid var(--c-border); border-radius: var(--r-md);
+  font: var(--w-normal) var(--t-body)/1.4 var(--f-body);
+}
+.textarea { block-size: auto; min-height: calc(var(--ctrl-h) * 2.5); padding: var(--s3); resize: vertical; }
+.input:hover, .select:hover, .is-hover.input { border-color: var(--c-ink); }
+.input.is-focus, .select.is-focus { outline: var(--focus-w) solid var(--focus-c); outline-offset: var(--focus-offset); }
+.input[disabled], .select[disabled], .textarea[disabled] {
+  background: var(--c-stone); color: var(--c-ink-muted); border-color: transparent; cursor: not-allowed;
+}
+.input[aria-invalid="true"], .select[aria-invalid="true"] { border-color: var(--c-err); border-width: 2px; }
+.select {
+  appearance: none;
+  background-image: linear-gradient(45deg, transparent 50%, var(--c-ink) 50%),
+                    linear-gradient(135deg, var(--c-ink) 50%, transparent 50%);
+  background-position: right var(--s4) center, calc(100% - var(--s3)) center;
+  background-size: 6px 6px, 6px 6px;
+  background-repeat: no-repeat;
+  padding-right: var(--s7);
+}
+
+/* チェックボックス：タップ領域を44pxまで広げる */
+.check { display: flex; align-items: center; gap: var(--s3); min-height: var(--tap); cursor: pointer; }
+.check input { inline-size: 22px; block-size: 22px; accent-color: var(--c-clay); margin: 0; }
+.check.is-disabled { color: var(--c-ink-muted); cursor: not-allowed; }
+
+/* ---- タブ --------------------------------------------------------------- */
+.tabs { display: flex; gap: var(--s5); border-bottom: 1px solid var(--c-rule); overflow-x: auto; }
+.tab {
+  min-height: var(--tap); padding: 0 var(--s1);
+  display: inline-flex; align-items: center; white-space: nowrap;
+  background: none; border: 0; border-bottom: 3px solid transparent;
+  color: var(--c-ink-3); font: var(--w-medium) var(--t-label)/1 var(--f-body); cursor: pointer;
+}
+.tab:hover, .tab.is-hover { color: var(--c-ink); }
+.tab[aria-selected="true"] { color: var(--c-ink); border-bottom-color: var(--c-clay); }
+.tab[disabled], .tab.is-disabled { color: var(--c-ink-muted); cursor: not-allowed; }
+
+/* ---- カード ------------------------------------------------------------- */
+.card {
+  background: var(--c-paper-2);
+  border: 1px solid var(--c-rule); border-radius: var(--r-lg);
+  padding: var(--s5);
+  display: grid; gap: var(--s3);
+}
+.card__title { font-family: var(--f-display); font-size: var(--t-h3); line-height: var(--lh-snug); }
+.card--link:hover, .card--link.is-hover { border-color: var(--c-border); background: var(--c-paper); }
+.card.is-disabled { background: var(--c-stone); color: var(--c-ink-muted); }
+
+/* ---- 表：横スクロールを許可する唯一の場所 -------------------------------- */
+.table-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+.table { border-collapse: collapse; width: 100%; min-width: 30rem; font-size: var(--t-body); }
+.table th, .table td { padding: var(--s3) var(--s4); text-align: left; border-bottom: 1px solid var(--c-rule); }
+.table thead th { background: var(--c-paper-2); font-weight: var(--w-bold); font-size: var(--t-label); }
+.table td.num, .table th.num { text-align: right; font-variant-numeric: tabular-nums; }
+
+/* ---- 通知 --------------------------------------------------------------- */
+.notice {
+  display: grid; gap: var(--s1);
+  padding: var(--s4);
+  border-left: 4px solid var(--c-border);
+  background: var(--c-paper-2);
+  border-radius: 0 var(--r-md) var(--r-md) 0;
+  font-size: var(--t-body);
+}
+.notice__title { font-weight: var(--w-bold); font-size: var(--t-label); }
+.notice--ok   { border-left-color: var(--c-ok); }
+.notice--warn { border-left-color: var(--c-warn); }
+.notice--err  { border-left-color: var(--c-err); }
+.notice--ok   .notice__title { color: var(--c-ok); }
+.notice--warn .notice__title { color: var(--c-warn); }
+.notice--err  .notice__title { color: var(--c-err); }
+
+/* ---- ダイアログ ---------------------------------------------------------- */
+.dialog {
+  border: 0; border-radius: var(--r-lg); padding: var(--s6);
+  max-width: 32rem; width: calc(100% - var(--s6));
+  background: var(--c-paper); color: var(--c-ink);
+  box-shadow: var(--shadow-dialog);
+}
+.dialog::backdrop { background: rgb(26 22 19 / 55%); }
+.dialog__actions { display: flex; gap: var(--s3); justify-content: flex-end; margin-top: var(--s5); flex-wrap: wrap; }
+/* モバイルでは下から出る全幅シート */
+@media (max-width: 599px) {
+  .dialog { width: 100%; max-width: none; margin: auto auto 0; border-radius: var(--r-lg) var(--r-lg) 0 0; }
+  .dialog__actions .btn { flex: 1 1 auto; }
+}
+
+/* ---- 面（セクションの地）------------------------------------------------- */
+.band          { padding-block: var(--s8); }
+.band--paper2  { background: var(--c-paper-2); }
+.band--moss    { background: var(--c-moss); color: var(--c-paper); }
+.band--moss h1, .band--moss h2, .band--moss h3 { color: var(--c-paper); }
+.band--moss a  { color: var(--c-gold); }
+.band--gold    { background: var(--c-gold-soft); }
+
+
+/* ===========================================================================
+   レイアウト部品（ページ実装で追加。UIカタログにも同時に追加すること）
+   =========================================================================== */
+
+/* ---- 下書きの印：⛔ 公開版に残してはいけない --------------------------------
+   オーナーに見せる下書き専用。二次情報から書いた箇所と、確認したい箇所を示す。
+   check.py がこのクラスの残存でビルドを落とす。 */
+.draft-note {
+  display: block;
+  margin: var(--s3) 0;
+  padding: var(--s3) var(--s4);
+  background: var(--c-gold-soft);
+  border-left: 4px solid var(--c-gold);
+  border-radius: 0 var(--r-md) var(--r-md) 0;
+  font-size: var(--t-small);
+  color: var(--c-ink);
+  max-width: var(--measure);
+}
+.draft-note b { font-weight: var(--w-bold); }
+
+/* ---- フォールド：文字は写真の上に置かない（分割する）---------------------- */
+.fold { display: grid; gap: var(--s5); align-items: center; }
+@media (min-width: 900px) {
+  .fold { grid-template-columns: 1.1fr 1fr; gap: var(--s7); }
+}
+.fold__media img { width: 100%; height: auto; display: block; border-radius: var(--r-lg); }
+.fold__text > * + * { margin-top: var(--s4); }
+
+/* ---- 要点リスト：疲れた人が3秒で読む所 ------------------------------------ */
+.facts { list-style: none; padding: 0; margin: 0; display: grid; gap: var(--s3); }
+.facts li {
+  display: grid; grid-template-columns: 8.5rem 1fr; gap: var(--s4);
+  padding-bottom: var(--s3); border-bottom: 1px solid var(--c-rule);
+  align-items: baseline;
+}
+.facts li:last-child { border-bottom: 0; padding-bottom: 0; }
+.facts dt, .facts .facts__k {
+  font-weight: var(--w-bold); font-size: var(--t-label);
+}
+@media (max-width: 599px) {
+  .facts li { grid-template-columns: 1fr; gap: var(--s1); }
+}
+
+/* ---- 本文と図の並び ------------------------------------------------------- */
+.split { display: grid; gap: var(--s5); }
+@media (min-width: 760px) { .split { grid-template-columns: 1fr 370px; gap: var(--s7); align-items: start; } }
+.fig { margin: 0; }
+.fig img { width: 100%; height: auto; display: block; border-radius: var(--r-md); }
+.fig figcaption { margin-top: var(--s2); font-size: var(--t-small); color: var(--c-ink-3); }
+
+/* ---- 小さい図を並べる（元画像が370pxしかないため大きくしない）------------- */
+.figs { display: grid; gap: var(--s4); grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr)); }
+
+/* ---- 連絡先の行 ----------------------------------------------------------- */
+.contact-list { list-style: none; padding: 0; margin: 0; display: grid; gap: var(--s4); }
+.contact-list a { min-height: var(--tap); display: inline-flex; align-items: center; }

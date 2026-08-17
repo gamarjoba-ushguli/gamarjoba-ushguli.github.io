@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>UIカタログ — Guesthouse Gamarjoba デザインシステム</title>
+<link rel="stylesheet" href="/assets/css/tokens.css">
+<link rel="stylesheet" href="/assets/css/components.css">
+<style>
+  /* このカタログ専用の並べ方だけ。部品のスタイルはここに書かない */
+  .cat-head { background: var(--c-moss); color: var(--c-paper); padding-block: var(--s6); }
+  .cat-head h1 { color: var(--c-paper); }
+  .sec { padding-block: var(--s7); border-top: 1px solid var(--c-rule); }
+  .sec > .wrap > h2 { margin-bottom: var(--s5); }
+  .row { display: flex; flex-wrap: wrap; gap: var(--s4); align-items: flex-start; margin-bottom: var(--s5); }
+  .stateLabel { font-size: var(--t-small); color: var(--c-ink-3); display: block; margin-bottom: var(--s2); }
+  .swatches { display: grid; grid-template-columns: repeat(auto-fill, minmax(9rem, 1fr)); gap: var(--s3); }
+  .sw { border: 1px solid var(--c-rule); border-radius: var(--r-md); overflow: hidden; }
+  .sw__chip { height: 3.5rem; }
+  .sw__meta { padding: var(--s2) var(--s3); font-size: var(--t-small); line-height: 1.4; }
+  .sw__meta code { font-size: 0.8125rem; color: var(--c-ink-3); }
+  .scale li { margin-bottom: var(--s2); }
+  .spacer { background: var(--c-gold); height: 1rem; display: inline-block; vertical-align: middle; }
+  .grid2 { display: grid; gap: var(--s4); grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr)); }
+</style>
+</head>
+<body>
+
+<header class="cat-head">
+  <div class="wrap">
+    <p class="small" style="color:var(--c-gold-soft);margin-bottom:var(--s2)">Guesthouse Gamarjoba — デザインシステム 確認用</p>
+    <h1>UIカタログ</h1>
+    <p class="lede" style="color:var(--c-paper);margin-top:var(--s3)">全部品の全状態をここに並べる。承認されるまで画面は実装しない。</p>
+  </div>
+</header>
+
+<!-- 1. 色 ============================================================== -->
+<section class="sec"><div class="wrap">
+  <h2>1. 色</h2>
+  <p class="small">Fridon Nizharadze の絵から抽出した実測値が起点。コントラストは全20ペア計算済みで、本文4.5:1・部品境界3:1を満たす。</p>
+
+  <h3 style="margin-top:var(--s5)">地と文字</h3>
+  <div class="swatches" style="margin-top:var(--s3)">
+    <div class="sw"><div class="sw__chip" style="background:var(--c-paper)"></div><div class="sw__meta">paper<br><code>#FAF7F1</code></div></div>
+    <div class="sw"><div class="sw__chip" style="background:var(--c-paper-2)"></div><div class="sw__meta">paper-2<br><code>#F1ECE1</code></div></div>
+    <div class="sw"><div class="sw__chip" style="background:var(--c-stone)"></div><div class="sw__meta">stone<br><code>#E2DACB</code></div></div>
+    <div class="sw"><div class="sw__chip" style="background:var(--c-ink)"></div><div class="sw__meta">ink 16.8:1<br><code>#1A1613</code></div></div>
+    <div class="sw"><div class="sw__chip" style="background:var(--c-ink-2)"></div><div class="sw__meta">ink-2 9.2:1<br><code>#4A4239</code></div></div>
+    <div class="sw"><div class="sw__chip" style="background:var(--c-ink-3)"></div><div class="sw__meta">ink-3 5.7:1<br><code>#6B6154</code></div></div>
+  </div>
+
+  <h3 style="margin-top:var(--s6)">Fridon の絵から</h3>
+  <div class="swatches" style="margin-top:var(--s3)">
+    <div class="sw"><div class="sw__chip" style="background:var(--c-gold)"></div><div class="sw__meta">gold 太陽<br><code>#B99B2E</code></div></div>
+    <div class="sw"><div class="sw__chip" style="background:var(--c-gold-soft)"></div><div class="sw__meta">gold-soft<br><code>#EFE3BE</code></div></div>
+    <div class="sw"><div class="sw__chip" style="background:var(--c-teal)"></div><div class="sw__meta">teal 光線<br><code>#275C5C</code></div></div>
+    <div class="sw"><div class="sw__chip" style="background:var(--c-clay)"></div><div class="sw__meta">clay 滴り<br><code>#7A2A18</code></div></div>
+    <div class="sw"><div class="sw__chip" style="background:var(--c-moss)"></div><div class="sw__meta">moss 谷<br><code>#26301B</code></div></div>
+  </div>
+
+  <h3 style="margin-top:var(--s6)">線（役割で分ける）と状態</h3>
+  <div class="swatches" style="margin-top:var(--s3)">
+    <div class="sw"><div class="sw__chip" style="background:var(--c-rule)"></div><div class="sw__meta">rule 装飾罫<br><code>#D8CFBE</code></div></div>
+    <div class="sw"><div class="sw__chip" style="background:var(--c-border)"></div><div class="sw__meta">border 部品境界 3.7:1<br><code>#8A7F6C</code></div></div>
+    <div class="sw"><div class="sw__chip" style="background:var(--c-ok)"></div><div class="sw__meta">ok<br><code>#2F5D3A</code></div></div>
+    <div class="sw"><div class="sw__chip" style="background:var(--c-warn)"></div><div class="sw__meta">warn<br><code>#8A5A00</code></div></div>
+    <div class="sw"><div class="sw__chip" style="background:var(--c-err)"></div><div class="sw__meta">err<br><code>#94271F</code></div></div>
+  </div>
+</div></section>
+
+<!-- 2. タイポグラフィ ================================================== -->
+<section class="sec"><div class="wrap">
+  <h2>2. タイポグラフィ</h2>
+  <h1 style="margin-top:var(--s4)">Ushguli の一番上の家</h1>
+  <p class="small">h1 / display / clamp(2.00→3.25rem)</p>
+  <h2 style="margin-top:var(--s5)">Fridon の絵のある家</h2>
+  <p class="small">h2 / clamp(1.50→2.10rem)</p>
+  <h3 style="margin-top:var(--s5)">熱いシャワーと夕食</h3>
+  <p class="small">h3 / clamp(1.20→1.45rem)</p>
+  <p class="lede" style="margin-top:var(--s5)">導入文。4日歩いてきた人が最初に読む一段落。行間は1.35で、本文より少し詰める。</p>
+  <p style="margin-top:var(--s4)">本文 17px、行間1.65。山の宿の説明は読み物になるので、長文の可読性を優先する。行長は34remで頭打ちにする。</p>
+  <p class="small">補足・キャプション 14px。<strong>これが最小サイズで、これより小さい文字を使わない。</strong></p>
+  <p style="margin-top:var(--s4)">数値は等幅数字：<span class="num">120 GEL</span> / <span class="num">80 GEL</span> / <span class="num">2,100 m</span><br>
+  <span class="small">価格は必ず「単位」と「何あたりか」を併記する。計算はしない。</span></p>
+</div></section>
+
+<!-- 3. 余白 ============================================================ -->
+<section class="sec"><div class="wrap">
+  <h2>3. 余白</h2>
+  <p class="small">基本単位 4px。この階段以外の値を使わない。</p>
+  <ul class="scale small" style="list-style:none;padding:0;margin-top:var(--s4)">
+    <li><span class="spacer" style="width:var(--s1)"></span> s1 4px — アイコンと文字</li>
+    <li><span class="spacer" style="width:var(--s2)"></span> s2 8px — ラベルと入力欄</li>
+    <li><span class="spacer" style="width:var(--s3)"></span> s3 12px — 部品内の詰め、見出し直下</li>
+    <li><span class="spacer" style="width:var(--s4)"></span> s4 16px — 段落間、カード内</li>
+    <li><span class="spacer" style="width:var(--s5)"></span> s5 24px — カードの内側、要素間</li>
+    <li><span class="spacer" style="width:var(--s6)"></span> s6 32px — 小ブロック間</li>
+    <li><span class="spacer" style="width:var(--s7)"></span> s7 48px — ブロック間</li>
+    <li><span class="spacer" style="width:var(--s8)"></span> s8 64px — セクション上下（モバイルは48px）</li>
+    <li><span class="spacer" style="width:var(--s9)"></span> s9 96px — 大きな区切り（モバイルは64px）</li>
+  </ul>
+</div></section>
+
+<!-- 4. ボタン ========================================================== -->
+<section class="sec"><div class="wrap">
+  <h2>4. ボタン</h2>
+  <p class="small">高さ44px＝最小タップ領域。5状態すべてを併記する。</p>
+
+  <h3 style="margin-top:var(--s5)">主ボタン（clay）</h3>
+  <div class="row">
+    <div><span class="stateLabel">通常</span><button class="btn btn--primary">空室を問い合わせる</button></div>
+    <div><span class="stateLabel">ホバー</span><button class="btn btn--primary is-hover">空室を問い合わせる</button></div>
+    <div><span class="stateLabel">フォーカス</span><button class="btn btn--primary is-focus">空室を問い合わせる</button></div>
+    <div><span class="stateLabel">無効</span><button class="btn btn--primary" disabled>空室を問い合わせる</button></div>
+  </div>
+
+  <h3>副ボタン</h3>
+  <div class="row">
+    <div><span class="stateLabel">通常</span><button class="btn btn--secondary">行き方を見る</button></div>
+    <div><span class="stateLabel">ホバー</span><button class="btn btn--secondary is-hover">行き方を見る</button></div>
+    <div><span class="stateLabel">フォーカス</span><button class="btn btn--secondary is-focus">行き方を見る</button></div>
+    <div><span class="stateLabel">無効</span><button class="btn btn--secondary" disabled>行き方を見る</button></div>
+  </div>
+
+  <h3>控えめボタン</h3>
+  <div class="row">
+    <div><span class="stateLabel">通常</span><button class="btn btn--quiet">写真をもっと見る</button></div>
+    <div><span class="stateLabel">ホバー</span><button class="btn btn--quiet is-hover">写真をもっと見る</button></div>
+    <div><span class="stateLabel">フォーカス</span><button class="btn btn--quiet is-focus">写真をもっと見る</button></div>
+    <div><span class="stateLabel">無効</span><button class="btn btn--quiet" disabled>写真をもっと見る</button></div>
+  </div>
+</div></section>
+
+<!-- 5. フォーム ======================================================== -->
+<section class="sec"><div class="wrap">
+  <h2>5. 入力欄・セレクト・チェックボックス</h2>
+  <div class="grid2">
+    <div class="field">
+      <label class="field__label" for="i1">お名前<span class="stateLabel" style="display:inline"> — 通常</span></label>
+      <input class="input" id="i1" placeholder="例：Anna">
+      <span class="field__hint">パスポートの表記でなくて構いません</span>
+    </div>
+    <div class="field">
+      <label class="field__label" for="i2">お名前 — フォーカス</label>
+      <input class="input is-focus" id="i2" value="Anna">
+    </div>
+    <div class="field">
+      <label class="field__label" for="i3">お名前 — 無効</label>
+      <input class="input" id="i3" value="Anna" disabled>
+    </div>
+    <div class="field">
+      <label class="field__label" for="i4">お名前 — エラー</label>
+      <input class="input" id="i4" aria-invalid="true" value="">
+      <span class="field__error">お名前を入れてください</span>
+    </div>
+    <div class="field">
+      <label class="field__label" for="s1">人数 — セレクト</label>
+      <select class="select" id="s1"><option>1人</option><option>2人</option><option>3人</option></select>
+    </div>
+    <div class="field">
+      <label class="field__label" for="t1">ご質問 — テキストエリア</label>
+      <textarea class="textarea" id="t1" placeholder="到着時刻など"></textarea>
+    </div>
+  </div>
+  <div class="row" style="margin-top:var(--s5)">
+    <label class="check"><input type="checkbox" checked> 夕食もお願いしたい</label>
+    <label class="check"><input type="checkbox"> 送迎について相談したい</label>
+    <label class="check is-disabled"><input type="checkbox" disabled> 冬季の滞在（未確認）</label>
+  </div>
+</div></section>
+
+<!-- 6. タブ・カード ==================================================== -->
+<section class="sec"><div class="wrap">
+  <h2>6. タブとカード</h2>
+  <div class="tabs" role="tablist">
+    <button class="tab" role="tab" aria-selected="true">部屋</button>
+    <button class="tab" role="tab" aria-selected="false">食事</button>
+    <button class="tab is-hover" role="tab" aria-selected="false">ホバー</button>
+    <button class="tab" role="tab" aria-selected="false" disabled>無効</button>
+  </div>
+  <div class="grid2" style="margin-top:var(--s5)">
+    <div class="card">
+      <h3 class="card__title">ダブルルーム</h3>
+      <p class="small">要オーナー確認：部屋数・ベッド構成・バスルームが専用か共用か</p>
+      <p><span class="num">— GEL</span> / 1泊</p>
+      <button class="btn btn--secondary">この部屋について聞く</button>
+    </div>
+    <div class="card card--link is-hover">
+      <h3 class="card__title">カード（ホバー）</h3>
+      <p class="small">リンクカードのホバー状態</p>
+    </div>
+    <div class="card is-disabled">
+      <h3 class="card__title">カード（無効）</h3>
+      <p class="small">冬季など、選べない状態</p>
+    </div>
+  </div>
+</div></section>
+
+<!-- 7. 表 ============================================================== -->
+<section class="sec"><div class="wrap">
+  <h2>7. 表</h2>
+  <p class="small">横スクロールを許可するのはこの中だけ。ページ本体は絶対に横スクロールさせない。</p>
+  <div class="table-scroll" style="margin-top:var(--s4)">
+    <table class="table">
+      <thead><tr><th>内容</th><th>含まれるもの</th><th class="num">料金</th></tr></thead>
+      <tbody>
+        <tr><td>1泊＋朝食・夕食</td><td>要確認</td><td class="num">— GEL</td></tr>
+        <tr><td>1泊のみ</td><td>要確認</td><td class="num">— GEL</td></tr>
+        <tr><td>昼食のみ</td><td>要確認</td><td class="num">— GEL</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="small" style="margin-top:var(--s3)">料金は全て「—」。旧サイトの2015年の数字は11年前なので載せない。</p>
+</div></section>
+
+<!-- 8. 通知 ============================================================ -->
+<section class="sec"><div class="wrap">
+  <h2>8. 通知・警告・エラー</h2>
+  <div style="display:grid;gap:var(--s4);max-width:var(--measure)">
+    <div class="notice"><span class="notice__title">お知らせ</span><p>Shkhara氷河へのトレイルは家の前から始まります。</p></div>
+    <div class="notice notice--ok"><span class="notice__title">送信しました</span><p>お問い合わせを送りました。返信をお待ちください。</p></div>
+    <div class="notice notice--warn"><span class="notice__title">ご注意</span><p>山道の状況は季節で変わります。到着前にご相談ください。</p></div>
+    <div class="notice notice--err"><span class="notice__title">送信できませんでした</span><p>通信が不安定なようです。電話でご連絡ください。</p></div>
+  </div>
+</div></section>
+
+<!-- 9. ダイアログ ====================================================== -->
+<section class="sec"><div class="wrap">
+  <h2>9. ダイアログ</h2>
+  <p class="small">モバイルでは下から出る全幅シートになる（PCでは中央）。</p>
+  <div class="dialog" style="position:static;display:block;margin-top:var(--s4)">
+    <h3>写真</h3>
+    <p class="small" style="margin-top:var(--s3)">オーナーの旧サイトにあった写真です。掲載前に本人確認を取ります。</p>
+    <div class="dialog__actions">
+      <button class="btn btn--secondary">閉じる</button>
+      <button class="btn btn--primary">問い合わせる</button>
+    </div>
+  </div>
+</div></section>
+
+<!-- 10. 面 ============================================================= -->
+<section class="sec"><div class="wrap"><h2>10. セクションの面</h2></div>
+  <div class="band band--paper2" style="margin-top:var(--s4)"><div class="wrap"><h3>paper-2 の面</h3><p class="small">情報のかたまりを区切る</p></div></div>
+  <div class="band band--gold"><div class="wrap"><h3>gold の面</h3><p class="small">Fridon のギャラリー節に使う</p></div></div>
+  <div class="band band--moss"><div class="wrap"><h3>moss の面</h3><p class="small">反転。地図や連絡先など、締めに使う。<a href="#">リンクは金</a></p></div></div>
+</section>
+
+<footer class="band band--paper2" style="padding-block:var(--s6)">
+  <div class="wrap"><p class="small">確認用ページ。noindex。承認後に削除するのではなく、部品を足したら必ずここにも足す。</p></div>
+</footer>
+
+</body>
+</html>
