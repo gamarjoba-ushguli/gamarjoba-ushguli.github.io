@@ -51,6 +51,8 @@ for p in pages:
             errors.append(f"{name}: ⛔ 社内メモ（要確認 / TODO）が残っている")
         if 'content="noindex' in s and name != "404.html":
             errors.append(f"{name}: ⛔ noindex が残っている。公開版から外すこと")
+        if 'plate--empty' in s:
+            errors.append(f"{name}: ⛔ 空の額 .plate--empty が残っている（写真が未着の場所）")
         if 'href="#"' in s:
             errors.append(f"{name}: ⛔ 空リンク href=\"#\" が残っている")
 

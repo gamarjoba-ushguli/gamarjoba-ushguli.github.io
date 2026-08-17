@@ -246,6 +246,68 @@
   <div class="band band--moss"><div class="wrap"><h3>moss の面</h3><p class="small">反転。地図や連絡先など、締めに使う。<a href="#">リンクは金</a></p></div></div>
 </section>
 
+<!-- 11. 額と壁ラベル ==================================================== -->
+<section class="sec"><div class="wrap">
+  <h2>11. 額と壁ラベル（`.plate`）</h2>
+  <p class="small">⛔ <b>Fridon の作品にのみ使う。</b>部屋や風景の写真は枠なしの `.fig`。
+    額が Fridon の作品にしか付かないから、額に意味が出る（`_docs/10-art-direction.md` §1）。</p>
+
+  <h3 style="margin-top:var(--s6)">掛けてある状態</h3>
+  <figure class="plate" style="max-width:26rem">
+    <div class="plate__frame">
+      <picture>
+        <source type="image/webp" srcset="/assets/img/family-collage-480.webp">
+        <img src="/assets/img/family-collage-760.jpg" width="1120" height="414" alt="谷の写真に金の太陽の絵を合成した、家族自身の看板画像。">
+      </picture>
+    </div>
+    <figcaption class="plate__label">
+      <span class="label">Our first sign</span>
+      <p>壁ラベルは金の2px罫で区切る。ラベルは大文字・小サイズ・字送り <code>--track-label</code>。</p>
+    </figcaption>
+  </figure>
+
+  <h3 style="margin-top:var(--s7)">まだ掛けていない状態（`.plate--empty`）</h3>
+  <p class="small">写真が届くまでの場所。<b>壊れて見せない。</b>
+    ⛔ <code>check.py --publish</code> が残存を検出して公開を止める。</p>
+  <div class="row" style="margin-top:var(--s4);align-items:flex-start">
+    <figure class="plate plate--empty" style="width:15rem">
+      <div class="plate__frame"><span class="label">Photograph to come</span></div>
+      <figcaption class="plate__label"><span class="label">縦長 4:5（部屋・室内）</span></figcaption>
+    </figure>
+    <figure class="plate plate--empty plate--wide" style="width:22rem">
+      <div class="plate__frame"><span class="label">Photograph to come</span></div>
+      <figcaption class="plate__label"><span class="label">横長 3:2（長机・パノラマ）</span></figcaption>
+    </figure>
+  </div>
+</div></section>
+
+<!-- 12. その他のページ部品 ============================================== -->
+<section class="sec"><div class="wrap">
+  <h2>12. ページ部品</h2>
+  <p class="eyebrow" style="margin-top:var(--s5)">Eyebrow — 見出しの上の小ラベル</p>
+  <p class="small">大文字・14px・字送り <code>--track-label</code>。壁ラベルと同じ字送りを共有する。</p>
+
+  <h3 style="margin-top:var(--s6)">要点リスト（`.facts`）</h3>
+  <p class="small">2列の台帳。<b>散文ではないので行長は 44rem</b>（`p/ul/ol` の 34rem を継がない）。
+    先頭1項目だけ `.facts__v--strong` で大きくする。</p>
+  <ul class="facts facts--lead" style="margin-top:var(--s4)">
+    <li><span class="facts__k">Bathroom</span><span class="facts__v facts__v--strong">In the room.</span></li>
+    <li><span class="facts__k">Price</span><span class="facts__v">Ask us. We will tell you before you come.</span></li>
+  </ul>
+
+  <h3 style="margin-top:var(--s7)">一行だけ大きく（`.statement`）</h3>
+  <p class="small"><b>ページ全体で1回しか使わない。</b>金の2px罫を上に持つ。</p>
+  <p class="statement">Every house in Ushguli looks out at the same mountains.<br>This is the one with Fridon’s paintings inside it.</p>
+
+  <h3 style="margin-top:var(--s7)">反転面の上の文字（既存バグの修正確認）</h3>
+  <div class="band band--moss" style="margin-top:var(--s4);padding-block:var(--s5)">
+    <div class="wrap">
+      <p class="lede">`.lede` は反転面で 12.91:1。以前は 1.40:1 で読めなかった。</p>
+      <p class="small">`.small` と `.caption` は gold-soft で 10.78:1。</p>
+    </div>
+  </div>
+</div></section>
+
 <footer class="band band--paper2" style="padding-block:var(--s6)">
   <div class="wrap"><p class="small">確認用ページ。noindex。承認後に削除するのではなく、部品を足したら必ずここにも足す。</p></div>
 </footer>

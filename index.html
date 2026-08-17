@@ -43,7 +43,7 @@
              and on the trail to Shkhara Glacier. Within 50 meters ... the highest point of the village." -->
         <p class="btn-row"><a class="btn btn--primary" href="#ask">Ask us about a room</a></p>
       </div>
-      <p class="fold__note caption">The village of Ushguli, and Shkhara behind it — the highest mountain in Georgia. The house stands at the upper edge of the village.</p>
+      <p class="fold__note caption">The village of Ushguli, and Shkhara behind it — the highest mountain in Georgia. Our house stands at the upper edge of the village.</p>
       <!-- ⛔ このキャプションは「Ushguliの写真」であることを明示している。
            宿の所有物や宿からの眺めとして書かない（_docs/12-image-licences.md）。 -->
     </div>
@@ -64,7 +64,7 @@
       <!-- ⬜ お湯は未確認。空欄にすると「無い」と読まれるため、この文言で運用する。 -->
       <li><span class="facts__k">Rooms</span><span class="facts__v">Two double rooms and two rooms with three beds. All upstairs.</span></li>
       <!-- [F-own] -->
-      <li><span class="facts__k">Food</span><span class="facts__v">Home-cooked, regional, made by the family.</span></li>
+      <li><span class="facts__k">Food</span><span class="facts__v">Home-cooked, regional, made by us.</span></li>
       <!-- [F-own] -->
       <li><span class="facts__k">Eating without staying</span><span class="facts__v">You can order a meal here even if you are not staying the night.</span></li>
       <!-- [F-own] "Even if you only pass by our house on the way to/from the glacier" -->
@@ -72,7 +72,7 @@
       <!-- ⬜ 未確認。旧サイトの 40 GEL は2015年。数字を書かない。 -->
       <li><span class="facts__k">Open</span><span class="facts__v">Write or call before you set out, and we will tell you.</span></li>
       <!-- ⬜ 営業期間は未確認。この文は1月でも7月でも、2026年でも2036年でも正しい。 -->
-      <li><span class="facts__k">Asking</span><span class="facts__v">By phone, or on Booking.com. Both reach the same family.</span></li>
+      <li><span class="facts__k">Asking</span><span class="facts__v">By phone, or on Booking.com. Both reach us.</span></li>
     </ul>
   </div>
 </section>
@@ -88,15 +88,12 @@
         <p>Some of the rooms have a balcony, and the mountains are on the other side of the window.</p>
         <!-- [F-agg] バルコニーと眺めはOTA掲載のみ。Mamuka が確認しなければ**この段落ごと削除**。 -->
       </div>
-      <figure class="fig">
-        <picture>
-          <source type="image/webp" sizes="(min-width:760px) 40vw, 92vw"
-                  srcset="/assets/img/ushguli-village-480.webp 480w, /assets/img/ushguli-village-800.webp 800w, /assets/img/ushguli-village-1200.webp 1200w">
-          <img src="/assets/img/ushguli-village-800.jpg" width="1200" height="800" loading="lazy" decoding="async"
-               alt="Ushguli in early summer: stone Svan towers and houses above a fast grey river, with snow still lying on the slopes behind.">
-        </picture>
-        <figcaption>Ushguli, from the river below the village.</figcaption>
+      <figure class="plate plate--empty" data-wanted="A room: from the door, and the bed. One photograph of each of the four rooms.">
+        <div class="plate__frame"><span class="label">Photograph to come</span></div>
+        <figcaption class="plate__label"><span class="label">A room</span></figcaption>
       </figure>
+      <!-- ⛔ 空の額。写真が届くまでの場所。check.py --publish が残存で落ちる。
+           ここに風景写真を置かない。部屋の節に村の写真は誤解を招く。 -->
     </div>
   </div>
 </section>
@@ -104,13 +101,19 @@
 <!-- ── 3. 食卓。ベンチはここに置く。ギャラリーの一つ手前で、説明しない ──── -->
 <section class="band band--paper2" id="table">
   <div class="wrap">
-    <div class="measure">
-      <h2>The table</h2>
-      <p>The dining room is on the ground floor. You eat at a table, on wooden chairs of the kind the village elder traditionally used, and on a bench that Fridon Nizharadze carved. The food is home-cooked and regional.</p>
-      <p>You do not have to be staying the night. If you are walking past on the way to the glacier or back from it, you can ask for a meal.</p>
-      <!-- [F-own] 両段落とも本人の文章に近い。
-           ⛔ ベンチをここに置くのは意図的。読者は Fridon が誰かを知る前に、彼の作品に座っている。
-              移動させない。ここで説明しない。 -->
+    <div class="split split--wide">
+      <div>
+        <h2>The table</h2>
+        <p>Our dining room is on the ground floor. You eat at a table, on wooden chairs of the kind the village elder traditionally used, and on a bench that Fridon Nizharadze carved. The food is home-cooked and regional.</p>
+        <p>You do not have to be staying the night. If you are walking past on the way to the glacier or back from it, you can ask for a meal.</p>
+        <!-- [F-own] 両段落とも本人の文章に近い。
+             ⛔ ベンチをここに置くのは意図的。読者は Fridon が誰かを知る前に、彼の作品に座っている。
+                移動させない。ここで説明しない。 -->
+      </div>
+      <figure class="plate plate--empty plate--wide" data-wanted="The long table, with the elder's chairs and Fridon's bench in frame.">
+        <div class="plate__frame"><span class="label">Photograph to come</span></div>
+        <figcaption class="plate__label"><span class="label">The table, and the bench Fridon carved</span></figcaption>
+      </figure>
     </div>
   </div>
 </section>
@@ -120,8 +123,8 @@
   <div class="wrap">
     <div class="measure">
       <h2>The paintings of Fridon Nizharadze</h2>
-      <p class="lede">There is a small gallery in the house. The paintings in it are by Fridon Nizharadze, and Fridon is one of the family.</p>
-      <p>They are not a collection that was bought and hung. They belong to the house, the way the bench in the dining room does — he carved that too, and you have already sat on it.</p>
+      <p class="lede">There is a small gallery in our house. The paintings in it are by Fridon Nizharadze, and Fridon is one of our family.</p>
+      <p>They are not a collection that was bought and hung. They belong to the house, the way the bench in our dining room does — he carved that too, and you have already sat on it.</p>
     </div>
     <figure class="plate">
       <div class="plate__frame">
@@ -133,8 +136,8 @@
         </picture>
       </div>
       <figcaption class="plate__label">
-        <span class="label">The family’s own picture of this place</span>
-        <p>When the family made their first website, this is the image they put at the top of it: the valley they live in, with one of Fridon’s suns placed in the sky above it. Nobody asked them to do that.</p>
+        <span class="label">Our first sign</span>
+        <p>When we made our first website, this is what we put at the top of it — the valley we live in, with one of Fridon’s suns in the sky above it.</p>
       </figcaption>
     </figure>
     <!-- ⭐ この額は本サイトで2箇所しか使わないもののひとつ。
@@ -144,6 +147,11 @@
             粗いままだから「記録」になる。整えると「素材」に落ちる。
          ⛔ 透かしの有無を実測確認済み（4隅すべてクリーン、2026-08-17）。
          ⛔ Fridon の絵が写っているので、掲載許可の門はこの画像にも掛かる。 -->
+
+    <figure class="plate plate--empty" data-wanted="The gallery room itself, and two or three of the paintings close up.">
+      <div class="plate__frame"><span class="label">Photograph to come</span></div>
+      <figcaption class="plate__label"><span class="label">The gallery</span></figcaption>
+    </figure>
 
     <p class="statement">Every house in Ushguli looks out at the same mountains.<br>This is the one with Fridon’s paintings inside it.</p>
     <!-- ⛔ このページで唯一、道の先の宿が明日コピーして真実であり続けられない一文。
@@ -157,14 +165,25 @@
 <!-- ── 5. 場所 ─────────────────────────────────────────────────────────── -->
 <section class="band" id="where">
   <div class="wrap">
-    <div class="measure">
-      <h2>Where it is</h2>
-      <p>Ushguli is a group of villages at the head of the Enguri valley in Svaneti, at about 2,100 metres, and its stone towers are a UNESCO World Heritage site. This house stands at the upper edge of it, close to St George church and Lamaria church.</p>
-      <p>Fifty metres away there is a hill, and it is the highest point of the village. From the top you see the whole of Ushguli one way and Shkhara, the highest peak in Georgia, the other. The trail to the Shkhara glacier starts here. So does the last day of the walk from Mestia, in reverse.</p>
-      <p>There is an ethnographic museum near the house, in an old Svanetian house — a <i>machubi</i>.</p>
-      <!-- [F-pub] 谷・標高・世界遺産 / [F-own] 位置・教会・50m・博物館
-           ⬜ Mestia からの来かたは書かない。車種も所要時間も道路状況も。最も捏造しやすく、最も早く古くなる。
-           📍 地図ピン 42.9183099, 43.0169435（Maps URL の @ は地図中心で約210mずれる） -->
+    <div class="split split--wide">
+      <div>
+        <h2>Where it is</h2>
+        <p>Ushguli is a group of villages at the head of the Enguri valley in Svaneti, at about 2,100 metres, and its stone towers are a UNESCO World Heritage site. Our house stands at the upper edge of it, close to St George church and Lamaria church.</p>
+        <p>Fifty metres away there is a hill, and it is the highest point of the village. From the top you see the whole of Ushguli one way and Shkhara, the highest peak in Georgia, the other. The trail to the Shkhara glacier starts here. So does the last day of the walk from Mestia, in reverse.</p>
+        <p>There is an ethnographic museum near us, in an old Svanetian house — a <i>machubi</i>.</p>
+        <!-- [F-pub] 谷・標高・世界遺産 / [F-own] 位置・教会・50m・博物館
+             ⬜ Mestia からの来かたは書かない。車種も所要時間も道路状況も。
+             📍 地図ピン 42.9183099, 43.0169435（Maps URL の @ は地図中心で約210mずれる） -->
+      </div>
+      <figure class="fig">
+        <picture>
+          <source type="image/webp" sizes="(min-width:760px) 40vw, 92vw"
+                  srcset="/assets/img/ushguli-village-480.webp 480w, /assets/img/ushguli-village-800.webp 800w, /assets/img/ushguli-village-1200.webp 1200w">
+          <img src="/assets/img/ushguli-village-800.jpg" width="1200" height="800" loading="lazy" decoding="async"
+               alt="Ushguli in early summer: stone Svan towers and houses above a fast grey river, with snow still lying on the slopes behind.">
+        </picture>
+        <figcaption>Ushguli, from the river below the village.</figcaption>
+      </figure>
     </div>
   </div>
 </section>
@@ -183,7 +202,7 @@
   <div class="wrap">
     <div class="measure">
       <h2>Ask us</h2>
-      <p class="lede">Write or call, and one of the family will answer. If you are already looking at us on Booking.com, you can book there — it is the same house and the same family.</p>
+      <p class="lede">Write or call, and one of us will answer. If you are already looking at us on Booking.com, you can book there — it is the same house and the same family.</p>
     </div>
     <ul class="contact-list">
       <li><span class="contact__who">Mariam</span><span class="contact__lang">speaks English</span></li>

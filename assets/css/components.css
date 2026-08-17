@@ -338,9 +338,11 @@ a:hover { color: var(--c-ink); }
 /* 写真が届くまでの「まだ掛けていない場所」。壊れて見せない */
 .plate--empty .plate__frame {
   background: var(--c-paper-2);
-  aspect-ratio: 4 / 5;
+  aspect-ratio: 4 / 5;               /* 既定は縦長（部屋・室内） */
   display: grid; place-items: center;
 }
+/* 被写体の形に額を合わせる。長机やパノラマは横長 */
+.plate--wide.plate--empty .plate__frame { aspect-ratio: 3 / 2; }
 
 /* ⚠️ 既存不具合の修正（アートディレクターが検出）
    .lede は color:var(--c-ink-2) #4A4239 を持つ。これが .band--moss #26301B の上に
