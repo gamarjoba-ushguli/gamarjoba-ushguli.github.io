@@ -242,3 +242,65 @@ a:hover { color: var(--c-ink); }
 /* ---- 連絡先の行 ----------------------------------------------------------- */
 .contact-list { list-style: none; padding: 0; margin: 0; display: grid; gap: var(--s4); }
 .contact-list a { min-height: var(--tap); display: inline-flex; align-items: center; }
+
+
+/* ===========================================================================
+   ページ用の追加部品（2026-08-17）。UIカタログにも追加すること（規約7）
+   =========================================================================== */
+
+/* ---- 全幅の画像帯。文字は絶対に載せない ---------------------------------- */
+.hero { display: block; background: var(--c-moss); }
+.hero img { display: block; width: 100%; height: auto; }
+/* 縦に長すぎる端末で帯が画面を占領しないよう上限をかける */
+@media (min-width: 900px) { .hero img { max-height: 62vh; object-fit: cover; } }
+.hero--band img { max-height: 30vh; object-fit: cover; }
+
+/* ---- フォールド：画像の下、紙の面に文字を置く ----------------------------- */
+.band--fold { padding-block: var(--s7) var(--s8); }
+.fold { display: grid; gap: var(--s5); }
+@media (min-width: 900px) {
+  .fold { grid-template-columns: minmax(0, 34rem) 1fr; gap: var(--s8); align-items: end; }
+}
+.fold__text > * + * { margin-top: var(--s4); }
+.fold__note { max-width: 22rem; }
+@media (min-width: 900px) { .fold__note { margin-bottom: var(--s2); } }
+
+.eyebrow {
+  font-size: var(--t-small); font-weight: var(--w-medium);
+  letter-spacing: 0.08em; text-transform: uppercase;
+  color: var(--c-ink-3); margin: 0;
+}
+
+/* ---- 要点リスト：疲れた人が最初に読む所。1行目だけ大きくする -------------- */
+.facts--lead li:first-child { padding-bottom: var(--s4); }
+.facts__v { font-size: var(--t-body); }
+.facts__v--strong {
+  font-family: var(--f-display); font-size: var(--t-h3);
+  line-height: var(--lh-snug); color: var(--c-ink);
+}
+
+/* ---- 本文の行長を締める箱 ------------------------------------------------ */
+.measure { max-width: var(--measure); }
+
+/* ---- 一行だけ大きく置く。ページ全体で1回しか使わない --------------------- */
+.statement {
+  font-family: var(--f-display);
+  font-size: clamp(1.45rem, 1.05rem + 1.9vw, 2.35rem);
+  line-height: var(--lh-tight);
+  max-width: 40rem;
+  margin: var(--s8) 0 0;
+  padding-top: var(--s6);
+  border-top: 2px solid var(--c-gold);
+  text-wrap: balance;
+}
+
+/* ---- 幅の広い分割（本文＋図）--------------------------------------------- */
+.split--wide { align-items: start; }
+@media (min-width: 760px) { .split--wide { grid-template-columns: 1fr minmax(0, 26rem); } }
+
+/* ---- 連絡先 --------------------------------------------------------------- */
+.contact-list { display: grid; gap: var(--s4); grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr)); max-width: 40rem; }
+.contact__who { display: block; font-family: var(--f-display); font-size: var(--t-h3); }
+.contact__lang { display: block; font-size: var(--t-small); color: var(--c-gold-soft); }
+.btn--gold { background: var(--c-gold); color: var(--c-ink); }
+.btn--gold:hover, .btn--gold.is-hover { background: var(--c-gold-soft); }
