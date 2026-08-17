@@ -33,7 +33,7 @@ h3 { font-size: var(--t-h3); line-height: var(--lh-snug); }
 p, ul, ol { margin: 0 0 var(--s4); max-width: var(--measure); }
 /* ⚠️ 見出し直後の間隔はこの順序（p の後）でなければ効かない。
    Beyond Nomad で p{margin} を先に書いて全見出しの下余白が消えた。動かさない。 */
-h2 + *, h3 + * { margin-top: var(--s3); }
+h2 + *, h3 + * { margin-top: var(--s4); }
 :where(p, ul, ol):last-child { margin-bottom: 0; }
 
 a { color: var(--c-teal); text-underline-offset: 0.15em; }
@@ -267,7 +267,7 @@ a:hover { color: var(--c-ink); }
 
 .eyebrow {
   font-size: var(--t-small); font-weight: var(--w-medium);
-  letter-spacing: 0.08em; text-transform: uppercase;
+  letter-spacing: var(--track-label); text-transform: uppercase;
   color: var(--c-ink-3); margin: 0;
 }
 
@@ -299,7 +299,7 @@ a:hover { color: var(--c-ink); }
 @media (min-width: 760px) { .split--wide { grid-template-columns: 1fr minmax(0, 26rem); } }
 
 /* ---- 連絡先 --------------------------------------------------------------- */
-.contact-list { display: grid; gap: var(--s4); grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr)); max-width: 40rem; }
+.contact-list { margin-top: var(--s7); display: grid; gap: var(--s4); grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr)); max-width: 40rem; }
 .contact__who { display: block; font-family: var(--f-display); font-size: var(--t-h3); }
 .contact__lang { display: block; font-size: var(--t-small); color: var(--c-gold-soft); }
 .btn--gold { background: var(--c-gold); color: var(--c-ink); }
@@ -349,3 +349,16 @@ a:hover { color: var(--c-ink); }
 .band--moss .lede,
 .band--moss .facts__v { color: var(--c-paper); }
 .band--moss .caption, .band--moss .small { color: var(--c-gold-soft); }
+
+
+/* ---- 節の中の間隔は CSS が引き受ける。マークアップに margin を書かない --------
+   ⚠️ Beyond Nomad では、CSSの記述順バグを補うために style="margin-top:…" が
+      マークアップ側に40箇所以上書かれた。あれはデザイン判断ではなく手当てだった。
+      同じことをしないために、繰り返し出る間隔はここで持つ。 */
+.facts  { margin-top: var(--s7); max-width: 44rem; }
+/* ⚠️ p/ul/ol の max-width:34rem（散文の行長）は、2列の台帳には狭すぎる。
+   .facts は散文ではないので独自の幅を持つ。inline style で上書きしない。 */
+.plate  { margin-top: var(--s7); }
+.btn-row{ margin-top: var(--s5); }
+.band--tight { padding-block: var(--s6); }
+.split .fig { margin-top: 0; }
