@@ -102,7 +102,7 @@
 
   
   <section class="band" id="rooms">
-    <div class="wrap split split--wide">
+    <div class="wrap split split--rooms">
       <div>
         <p class="eyebrow">Sleep</p>
         <h2>Rooms</h2>
@@ -110,10 +110,26 @@
         <p>Each room has its own bathroom.</p>
         
       </div>
-      <figure class="room-slot room-slot--empty">
-        <div class="room-slot__space"><span class="label">Photograph to come</span></div>
-        <figcaption><span class="label">A room, photographed by the family</span></figcaption>
-      </figure>
+      <div class="room-gallery">
+        <figure class="room-slot">
+          <picture>
+            <source type="image/webp" sizes="(min-width:900px) 29vw, 92vw"
+                    srcset="/assets/img/guest-room-yellow-480.webp 480w, /assets/img/guest-room-yellow-800.webp 800w, /assets/img/guest-room-yellow-1200.webp 1200w">
+            <img src="/assets/img/guest-room-yellow-1200.jpg" width="1200" height="900" loading="lazy" decoding="async"
+                 alt="An upstairs guest room with a double bed, wooden ceiling, two windows and a chair beside the bed.">
+          </picture>
+          <figcaption>An upstairs guest room.</figcaption>
+        </figure>
+        <figure class="room-slot">
+          <picture>
+            <source type="image/webp" sizes="(min-width:900px) 29vw, 92vw"
+                    srcset="/assets/img/guest-room-bathroom-480.webp 480w, /assets/img/guest-room-bathroom-800.webp 800w, /assets/img/guest-room-bathroom-1200.webp 1200w">
+            <img src="/assets/img/guest-room-bathroom-1200.jpg" width="1200" height="900" loading="lazy" decoding="async"
+                 alt="A green guest room with a double bed and the door to its private bathroom open.">
+          </picture>
+          <figcaption>A room with its own bathroom.</figcaption>
+        </figure>
+      </div>
       
     </div>
   </section>

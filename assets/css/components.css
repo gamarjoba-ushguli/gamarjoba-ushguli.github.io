@@ -469,14 +469,20 @@ a:hover { color: var(--c-ink); }
 .section-head .eyebrow + h2 { margin-top: var(--s2); }
 .section-head h2 + .lede { margin-top: var(--s4); }
 
-/* 部屋写真の未着枠。Fridon の「額」と混同しない、裸の写真スロット */
+/* 部屋写真。Fridon の「額」と混同しない、裸の写真スロット */
 .room-slot { margin: 0; }
+.room-slot img { display: block; width: 100%; height: auto; border-radius: var(--r-sm); }
 .room-slot__space {
   aspect-ratio: 3 / 2; display: grid; place-items: center;
   background: var(--c-paper-2); border-block: 1px solid var(--c-border);
 }
 .room-slot figcaption {
   margin-top: var(--s3); color: var(--c-ink-3); font-size: var(--t-small);
+}
+.room-gallery { display: grid; gap: var(--s5); }
+@media (min-width: 900px) {
+  .split--rooms { grid-template-columns: minmax(0, .72fr) minmax(0, 1.28fr); }
+  .room-gallery { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
 
 /* 食卓：夜の不在を暗い面で受け止める */
