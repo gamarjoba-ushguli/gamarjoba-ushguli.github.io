@@ -4,224 +4,228 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex, nofollow">
-<!-- 下書きの間だけ noindex。公開時に外す。check.py --publish が残存を検出して落とす。 -->
+
 <title>Guesthouse Gamarjoba — Ushguli, Svaneti, Georgia</title>
 <meta name="description" content="A family guesthouse at the top of Ushguli, where the trail to the Shkhara glacier begins. Rooms, home-cooked food, and a small gallery in the house.">
 <link rel="stylesheet" href="/assets/css/tokens.css">
 <link rel="stylesheet" href="/assets/css/components.css">
 </head>
-<body>
+<body id="top">
+<a class="skip-link" href="#main">Skip to the main content</a>
 
-<!-- =====================================================================
-     出典タグ  [F-own] 家族自身の旧サイト(2015) / [F-site] Shosuke 現地確認 /
-               [F-pub] 公開情報 / [F-agg] OTA掲載（要確認、未確認なら削除）
-     確認事項は本文に書かない。`_docs/08-owner-message-01.md` にまとめてある。
-     ===================================================================== -->
-
-<!-- ── FOLD：文字は写真の上に置かない。画像の帯 → 紙の面 ──────────────── -->
-<div class="hero">
-  <picture>
-    <!-- モバイルは縦長に切る。横長のままだと390px幅で高さ195pxにしかならず、
-         第一印象を担う場所として弱い。同じ写真の別クロップ。 -->
-    <source type="image/webp" media="(max-width: 599px)" sizes="100vw"
-            srcset="/assets/img/hero-ushguli-shkhara-p420.webp 420w, /assets/img/hero-ushguli-shkhara-p600.webp 600w, /assets/img/hero-ushguli-shkhara-p900.webp 900w">
-    <source type="image/webp" sizes="100vw"
-            srcset="/assets/img/hero-ushguli-shkhara-600.webp 600w, /assets/img/hero-ushguli-shkhara-1000.webp 1000w, /assets/img/hero-ushguli-shkhara-1600.webp 1600w, /assets/img/hero-ushguli-shkhara-2400.webp 2400w">
-    <img src="/assets/img/hero-ushguli-shkhara-1600.jpg" width="2400" height="1200" fetchpriority="high" decoding="async"
-         alt="Ushguli in autumn: stone towers and low houses along a green valley, with the snow face of Shkhara filling the head of the valley behind them.">
-  </picture>
-</div>
-
-<header class="band band--fold">
-  <div class="wrap">
-    <div class="fold">
-      <div class="fold__text">
-        <p class="eyebrow">Ushguli · Svaneti · Georgia</p>
-        <h1>The house at the top of Ushguli</h1>
-        <p class="lede">A family guesthouse beside Lamaria church, fifty metres below the highest point of the village, where the trail to the Shkhara glacier begins.</p>
-        <!-- [F-own] "located on the edge of Ushguli, close to St. George Church and Lamaria Church,
-             and on the trail to Shkhara Glacier. Within 50 meters ... the highest point of the village." -->
-        <p class="btn-row"><a class="btn btn--primary" href="#ask">Ask us about a room</a></p>
-      </div>
-      <p class="fold__note caption">The village of Ushguli, and Shkhara behind it — the highest mountain in Georgia. Our house stands at the upper edge of the village.</p>
-      <!-- ⛔ このキャプションは「Ushguliの写真」であることを明示している。
-           宿の所有物や宿からの眺めとして書かない（_docs/12-image-licences.md）。 -->
-    </div>
+<header class="site-head">
+  <div class="wrap site-head__inner">
+    <a class="site-name" href="#top" aria-label="Guesthouse Gamarjoba, back to the top">Gamarjoba</a>
+    <a class="site-head__ask" href="#ask">Ask us <span aria-hidden="true">→</span></a>
   </div>
 </header>
 
-<!-- ── 1. 実用：4日歩いてきた人が3秒で読む所 ───────────────────────────── -->
-<section class="band band--paper2" id="stay">
-  <div class="wrap">
-    <h2>If you have just walked here</h2>
-    <p class="lede">Four days from Mestia end in this village. These are the things you probably want to know first.</p>
+<main id="main">
+  
+  <section class="frontis" aria-labelledby="frontis-title">
+    <div class="wrap">
+      <svg class="sun" viewBox="0 0 100 100" aria-hidden="true" focusable="false">
+        <g class="sun__rays">
+          <path id="gm-ray-front" d="M50 46 L55 12 L50 2 L45 12 Z"/>
+          <use href="#gm-ray-front" transform="rotate(30 50 50)"/><use href="#gm-ray-front" transform="rotate(60 50 50)"/>
+          <use href="#gm-ray-front" transform="rotate(90 50 50)"/><use href="#gm-ray-front" transform="rotate(120 50 50)"/>
+          <use href="#gm-ray-front" transform="rotate(150 50 50)"/><use href="#gm-ray-front" transform="rotate(180 50 50)"/>
+          <use href="#gm-ray-front" transform="rotate(210 50 50)"/><use href="#gm-ray-front" transform="rotate(240 50 50)"/>
+          <use href="#gm-ray-front" transform="rotate(270 50 50)"/><use href="#gm-ray-front" transform="rotate(300 50 50)"/>
+          <use href="#gm-ray-front" transform="rotate(330 50 50)"/>
+        </g>
+        <circle class="sun__disc" cx="50" cy="50" r="26"/>
+        <path class="sun__drip" d="M50 76 q5 13 0 22 q-5 -9 0 -22 Z"/>
+      </svg>
+      <p class="eyebrow">Ushguli · Svaneti · Georgia</p>
+      <h1 class="frontis__title" id="frontis-title">The house at the top of Ushguli</h1>
+      <p class="lede">A family guesthouse beside Lamaria church, fifty metres below the highest point of the village, where the trail to the Shkhara glacier begins.</p>
+      
+      <div class="frontis__actions">
+        <a class="btn btn--primary" href="#ask">Ask us about a room</a>
+        <a class="btn btn--quiet" href="#where">Where it is <span aria-hidden="true">→</span></a>
+      </div>
+      <ul class="frontis-facts" aria-label="A few things to know">
+        <li>Bathroom in the room</li>
+        <li>Home-cooked food</li>
+        <li>Beds for the night</li>
+      </ul>
+      <div class="rule-sun" role="separator" aria-hidden="true"><span></span></div>
+    </div>
+  </section>
 
-    <ul class="facts facts--lead">
-      <li><span class="facts__k">Bathroom</span><span class="facts__v facts__v--strong">In the room.</span></li>
-      <!-- [F-site] 2026-08-17 Shosuke が清掃担当として毎日確認。旧サイト(2015)の「共用トイレ2つ」と
-           Booking の "private bathroom" の矛盾は、これで解決。**"en-suite" とは書かない。** -->
-      <li><span class="facts__k">Hot shower</span><span class="facts__v">Ask us when you arrive.</span></li>
-      <!-- ⬜ お湯は未確認。空欄にすると「無い」と読まれるため、この文言で運用する。 -->
-      <li><span class="facts__k">Rooms</span><span class="facts__v">Two double rooms and two rooms with three beds. All upstairs.</span></li>
-      <!-- [F-own] -->
-      <li><span class="facts__k">Food</span><span class="facts__v">Home-cooked, regional, made by us.</span></li>
-      <!-- [F-own] -->
-      <li><span class="facts__k">Eating without staying</span><span class="facts__v">You can order a meal here even if you are not staying the night.</span></li>
-      <!-- [F-own] "Even if you only pass by our house on the way to/from the glacier" -->
-      <li><span class="facts__k">Price</span><span class="facts__v">Ask us. We will tell you before you come.</span></li>
-      <!-- ⬜ 未確認。旧サイトの 40 GEL は2015年。数字を書かない。 -->
-      <li><span class="facts__k">Open</span><span class="facts__v">Write or call before you set out, and we will tell you.</span></li>
-      <!-- ⬜ 営業期間は未確認。この文は1月でも7月でも、2026年でも2036年でも正しい。 -->
-      <li><span class="facts__k">Asking</span><span class="facts__v">By phone, or on Booking.com. Both reach us.</span></li>
-    </ul>
-  </div>
-</section>
+  
+  <section class="sign band" aria-label="The family's first sign">
+    <div class="wrap">
+      <figure class="plate plate--sign">
+        <div class="plate__frame">
+          <picture>
+            <source type="image/webp" sizes="(min-width:900px) 70vw, 92vw"
+                    srcset="/assets/img/family-collage-480.webp 480w, /assets/img/family-collage-760.webp 760w, /assets/img/family-collage-1120.webp 1120w">
+            <img src="/assets/img/family-collage-760.jpg" width="1120" height="414" loading="eager" decoding="async"
+                 alt="A photograph of the Ushguli valley with one of Fridon Nizharadze’s paintings set into the sky: a golden face inside a sun, with turquoise rays and red beneath it.">
+          </picture>
+        </div>
+        <figcaption class="plate__label">
+          <span class="label">The family’s own sign</span>
+          <p>When the family made its first website, this is what they put at the top of it — the valley they live in, with one of Fridon’s suns in the sky above it.</p>
+        </figcaption>
+      </figure>
+      
+    </div>
+  </section>
 
-<!-- ── 2. 部屋 ─────────────────────────────────────────────────────────── -->
-<section class="band" id="rooms">
-  <div class="wrap">
-    <div class="split split--wide">
+  
+  <section class="band band--paper2" id="stay">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">Stay</p>
+        <h2>If you have just walked here</h2>
+        <p class="lede">Four days from Mestia end in this village. These are the things you probably want to know first.</p>
+      </div>
+      <ul class="facts facts--lead">
+        <li><span class="facts__k">Bathroom</span><span class="facts__v facts__v--strong">In the room.</span></li>
+        
+        <li><span class="facts__k">Hot shower</span><span class="facts__v">Ask us when you arrive.</span></li>
+        
+        <li><span class="facts__k">Rooms</span><span class="facts__v">Two double rooms and two rooms with three beds. All upstairs.</span></li>
+        <li><span class="facts__k">Food</span><span class="facts__v">Home-cooked, regional, made by the family.</span></li>
+        <li><span class="facts__k">Eating without staying</span><span class="facts__v">You can order a meal here even if you are not staying the night.</span></li>
+        <li><span class="facts__k">Price</span><span class="facts__v">Ask us. We will tell you before you come.</span></li>
+        <li><span class="facts__k">Open</span><span class="facts__v">Write or call before you set out, and we will tell you.</span></li>
+        <li><span class="facts__k">Asking</span><span class="facts__v">By phone, or on Booking.com. Both reach the same family.</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <div class="wrap"><div class="rule-sun" role="separator" aria-hidden="true"><span></span></div></div>
+
+  
+  <section class="band" id="rooms">
+    <div class="wrap split split--wide">
       <div>
+        <p class="eyebrow">Sleep</p>
         <h2>Rooms</h2>
-        <p>The rooms are upstairs. Two of them are doubles, and two have three beds. Each room has its own bathroom.</p>
-        <!-- [F-own] + [F-site] -->
-        <p>Some of the rooms have a balcony, and the mountains are on the other side of the window.</p>
-        <!-- [F-agg] バルコニーと眺めはOTA掲載のみ。Mamuka が確認しなければ**この段落ごと削除**。 -->
+        <p class="lede">The rooms are upstairs. Two of them are doubles, and two have three beds.</p>
+        <p>Each room has its own bathroom.</p>
+        
       </div>
-      <figure class="plate plate--empty" data-wanted="A room: from the door, and the bed. One photograph of each of the four rooms.">
-        <div class="plate__frame"><span class="label">Photograph to come</span></div>
-        <figcaption class="plate__label"><span class="label">A room</span></figcaption>
+      <figure class="room-slot room-slot--empty">
+        <div class="room-slot__space"><span class="label">Photograph to come</span></div>
+        <figcaption><span class="label">A room, photographed by the family</span></figcaption>
       </figure>
-      <!-- ⛔ 空の額。写真が届くまでの場所。check.py --publish が残存で落ちる。
-           ここに風景写真を置かない。部屋の節に村の写真は誤解を招く。 -->
+      
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- ── 3. 食卓。ベンチはここに置く。ギャラリーの一つ手前で、説明しない ──── -->
-<section class="band band--paper2" id="table">
-  <div class="wrap">
-    <div class="split split--wide">
-      <div>
-        <h2>The table</h2>
-        <p>Our dining room is on the ground floor. You eat at a table, on wooden chairs of the kind the village elder traditionally used, and on a bench that Fridon Nizharadze carved. The food is home-cooked and regional.</p>
+  
+  <section class="band band--moss" id="table">
+    <div class="wrap table-story">
+      <div class="pull">
+        <p>You sit on wooden chairs of the kind traditionally used by the village elder, and on a bench that Fridon carved.</p>
+      </div>
+      <div class="table-story__body">
+        <p class="eyebrow">The table</p>
+        <h2>Dinner is cooked in the house</h2>
+        <p>The dining room is downstairs. The food is home-cooked and regional, and it is eaten at one long table.</p>
         <p>You do not have to be staying the night. If you are walking past on the way to the glacier or back from it, you can ask for a meal.</p>
-        <!-- [F-own] 両段落とも本人の文章に近い。
-             ⛔ ベンチをここに置くのは意図的。読者は Fridon が誰かを知る前に、彼の作品に座っている。
-                移動させない。ここで説明しない。 -->
+        
       </div>
-      <figure class="plate plate--empty plate--wide" data-wanted="The long table, with the elder's chairs and Fridon's bench in frame.">
-        <div class="plate__frame"><span class="label">Photograph to come</span></div>
-        <figcaption class="plate__label"><span class="label">The table, and the bench Fridon carved</span></figcaption>
-      </figure>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- ── 4. Fridon。ページの感情的な頂点 ─────────────────────────────────── -->
-<section class="band band--gold" id="gallery">
-  <div class="wrap">
-    <div class="measure">
+  
+  <section class="band band--gold gallery" id="gallery">
+    <div class="wrap peak">
+      <svg class="sun sun--small" viewBox="0 0 100 100" aria-hidden="true" focusable="false">
+        <g class="sun__rays">
+          <path id="gm-ray-gallery" d="M50 46 L55 12 L50 2 L45 12 Z"/>
+          <use href="#gm-ray-gallery" transform="rotate(30 50 50)"/><use href="#gm-ray-gallery" transform="rotate(60 50 50)"/>
+          <use href="#gm-ray-gallery" transform="rotate(90 50 50)"/><use href="#gm-ray-gallery" transform="rotate(120 50 50)"/>
+          <use href="#gm-ray-gallery" transform="rotate(150 50 50)"/><use href="#gm-ray-gallery" transform="rotate(180 50 50)"/>
+          <use href="#gm-ray-gallery" transform="rotate(210 50 50)"/><use href="#gm-ray-gallery" transform="rotate(240 50 50)"/>
+          <use href="#gm-ray-gallery" transform="rotate(270 50 50)"/><use href="#gm-ray-gallery" transform="rotate(300 50 50)"/>
+          <use href="#gm-ray-gallery" transform="rotate(330 50 50)"/>
+        </g>
+        <circle class="sun__disc" cx="50" cy="50" r="26"/>
+        <path class="sun__drip" d="M50 76 q5 13 0 22 q-5 -9 0 -22 Z"/>
+      </svg>
+      <p class="eyebrow">In the house</p>
       <h2>The paintings of Fridon Nizharadze</h2>
-      <p class="lede">There is a small gallery in our house. The paintings in it are by Fridon Nizharadze, and Fridon is one of our family.</p>
-      <p>They are not a collection that was bought and hung. They belong to the house, the way the bench in our dining room does — he carved that too, and you have already sat on it.</p>
-    </div>
-    <figure class="plate">
-      <div class="plate__frame">
-        <picture>
-          <source type="image/webp" sizes="(min-width:900px) 60vw, 92vw"
-                  srcset="/assets/img/family-collage-480.webp 480w, /assets/img/family-collage-760.webp 760w, /assets/img/family-collage-1120.webp 1120w">
-          <img src="/assets/img/family-collage-760.jpg" width="1120" height="414" loading="lazy" decoding="async"
-               alt="A photograph of the Ushguli valley — green pasture, stone towers, snow peaks — with one of Fridon Nizharadze’s paintings set into the sky: a golden face inside a sun, with turquoise rays and a fall of red beneath it.">
-        </picture>
-      </div>
-      <figcaption class="plate__label">
-        <span class="label">Our first sign</span>
-        <p>When we made our first website, this is what we put at the top of it — the valley we live in, with one of Fridon’s suns in the sky above it.</p>
-      </figcaption>
-    </figure>
-    <!-- ⭐ この額は本サイトで2箇所しか使わないもののひとつ。
-         家族が自分の看板に Fridon の絵を合成していたという事実そのものが、
-         「ここは画家の家だ」という主張の一次資料になる。
-         ⛔ この合成写真を修正しない。ぼかさない、色を合わせない、切り抜き直さない。
-            粗いままだから「記録」になる。整えると「素材」に落ちる。
-         ⛔ 透かしの有無を実測確認済み（4隅すべてクリーン、2026-08-17）。
-         ⛔ Fridon の絵が写っているので、掲載許可の門はこの画像にも掛かる。 -->
-
-    <figure class="plate plate--empty" data-wanted="The gallery room itself, and two or three of the paintings close up.">
-      <div class="plate__frame"><span class="label">Photograph to come</span></div>
-      <figcaption class="plate__label"><span class="label">The gallery</span></figcaption>
-    </figure>
-
-    <p class="statement">Every house in Ushguli looks out at the same mountains.<br>This is the one with Fridon’s paintings inside it.</p>
-    <!-- ⛔ このページで唯一、道の先の宿が明日コピーして真実であり続けられない一文。
-         形容詞を足さない。感嘆符を付けない。平坦なままの方が強い。
-         ⛔ 掲載許可の門: 2015年に家族自身が公開していたことは、2026年の同意ではない。
-            Fridon さん本人かご家族の許可を得るまで公開しない。
-            許可が出なければ**この節ごと削除**する。上の節は単独で成立する。 -->
-  </div>
-</section>
-
-<!-- ── 5. 場所 ─────────────────────────────────────────────────────────── -->
-<section class="band" id="where">
-  <div class="wrap">
-    <div class="split split--wide">
-      <div>
-        <h2>Where it is</h2>
-        <p>Ushguli is a group of villages at the head of the Enguri valley in Svaneti, at about 2,100 metres, and its stone towers are a UNESCO World Heritage site. Our house stands at the upper edge of it, close to St George church and Lamaria church.</p>
-        <p>Fifty metres away there is a hill, and it is the highest point of the village. From the top you see the whole of Ushguli one way and Shkhara, the highest peak in Georgia, the other. The trail to the Shkhara glacier starts here. So does the last day of the walk from Mestia, in reverse.</p>
-        <p>There is an ethnographic museum near us, in an old Svanetian house — a <i>machubi</i>.</p>
-        <!-- [F-pub] 谷・標高・世界遺産 / [F-own] 位置・教会・50m・博物館
-             ⬜ Mestia からの来かたは書かない。車種も所要時間も道路状況も。
-             📍 地図ピン 42.9183099, 43.0169435（Maps URL の @ は地図中心で約210mずれる） -->
-      </div>
-      <figure class="fig">
-        <picture>
-          <source type="image/webp" sizes="(min-width:760px) 40vw, 92vw"
-                  srcset="/assets/img/ushguli-village-480.webp 480w, /assets/img/ushguli-village-800.webp 800w, /assets/img/ushguli-village-1200.webp 1200w">
-          <img src="/assets/img/ushguli-village-800.jpg" width="1200" height="800" loading="lazy" decoding="async"
-               alt="Ushguli in early summer: stone Svan towers and houses above a fast grey river, with snow still lying on the slopes behind.">
-        </picture>
-        <figcaption>Ushguli, from the river below the village.</figcaption>
+      <p class="lede">There is a small gallery in the house. The paintings in it are by Fridon Nizharadze, and Fridon is one of the family.</p>
+      <p class="peak__small">Every house in Ushguli looks out at the same mountains.</p>
+      <p class="statement statement--peak">This is the one with Fridon’s paintings inside it.</p>
+      <figure class="plate plate--empty gallery__plate">
+        <div class="plate__frame"><span class="label">Photograph to come</span></div>
+        <figcaption class="plate__label">
+          <span class="label">The gallery, in the house</span>
+          <p>The paintings will appear here only with the family’s permission.</p>
+        </figcaption>
       </figure>
+      
     </div>
-  </div>
-</section>
+  </section>
 
-<div class="hero hero--band">
-  <picture>
-    <source type="image/webp" sizes="100vw"
-            srcset="/assets/img/ushguli-wide-800.webp 800w, /assets/img/ushguli-wide-1400.webp 1400w, /assets/img/ushguli-wide-2400.webp 2400w">
-    <img src="/assets/img/ushguli-wide-1400.jpg" width="2400" height="480" loading="lazy" decoding="async"
-         alt="A wide view of the country around Ushguli: bare ridges, green pasture and the road running along the valley floor.">
-  </picture>
-</div>
-
-<!-- ── 6. 連絡 ─────────────────────────────────────────────────────────── -->
-<section class="band band--moss" id="ask">
-  <div class="wrap">
-    <div class="measure">
-      <h2>Ask us</h2>
-      <p class="lede">Write or call, and one of us will answer. If you are already looking at us on Booking.com, you can book there — it is the same house and the same family.</p>
+  
+  <section class="band where-intro" id="where">
+    <div class="wrap section-head">
+      <p class="eyebrow">Ushguli</p>
+      <h2>Where it is</h2>
+      <p class="lede">At the upper edge of the village, close to St George church and Lamaria church.</p>
     </div>
-    <ul class="contact-list">
-      <li><span class="contact__who">Mariam</span><span class="contact__lang">speaks English</span></li>
-      <li><span class="contact__who">Temraz</span><span class="contact__lang">speaks Russian</span></li>
-    </ul>
-    <p class="btn-row"><a class="btn btn--gold" href="#">See the rooms on Booking.com</a></p>
-    <!-- ⛔ 電話番号を貼っていない。手元にあるのは2015年の2件だけで、確認済みの事実ではない。
-         Mamuka さんに読み上げてもらってから入れる。（`_docs/11-copy.md` §9）
-         ⛔ guesthouse@gamarjoba-ushguli.com は絶対に書かない。ドメイン失効でメールは届かない。
-         ⛔ 人名の掲載は Mariam / Temraz 本人の許可が要る。
-         ⬜ Booking.com の正確なURL。検索結果から組み立てない。本人に聞く。 -->
-  </div>
-</section>
+  </section>
+  <figure class="place-image">
+    <picture>
+      <source type="image/webp" sizes="100vw"
+              srcset="/assets/img/ushguli-wide-800.webp 800w, /assets/img/ushguli-wide-1400.webp 1400w">
+      <img src="/assets/img/ushguli-wide-1400.jpg" width="2400" height="480" loading="lazy" decoding="async"
+           alt="A wide view of the country around Ushguli: bare ridges, green pasture and the road running along the valley floor.">
+    </picture>
+    <figcaption class="wrap">The country around Ushguli. This is a photograph of the village area, not a promise of a view from a particular room.</figcaption>
+  </figure>
+  <section class="band place-details">
+    <div class="wrap split split--wide">
+      <div>
+        <p>Ushguli is a group of villages at the head of the Enguri valley in Svaneti, at about <span class="num">2,100 metres</span>, and its stone towers are a UNESCO World Heritage site.</p>
+        <p>Fifty metres away there is a hill, and it is the highest point of the village. From the top you see the whole of Ushguli one way and Shkhara, the highest peak in Georgia, the other.</p>
+        <p>The trail to the Shkhara glacier starts here. So does the last day of the walk from Mestia, in reverse. There is an ethnographic museum near the house, in an old Svanetian house — a <i>machubi</i>.</p>
+        
+      </div>
+      <ul class="facts place-facts">
+        <li><span class="facts__k">Lamaria church</span><span class="facts__v">Beside the house</span></li>
+        <li><span class="facts__k">Highest point</span><span class="facts__v"><span class="num">50 m</span> away</span></li>
+        <li><span class="facts__k">Shkhara trail</span><span class="facts__v">Starts here</span></li>
+        <li><span class="facts__k">From Mestia</span><span class="facts__v">Four days on foot</span></li>
+        <li><span class="facts__k">Elevation</span><span class="facts__v"><span class="num">About 2,100 m</span></span></li>
+      </ul>
+    </div>
+  </section>
+
+  
+  <section class="band band--moss ask" id="ask">
+    <div class="wrap ask__grid">
+      <div>
+        <p class="eyebrow">Before you set out</p>
+        <h2>Ask us</h2>
+        <p class="lede">Write or call, and one of the family will answer. If you are already looking at us on Booking.com, you can book there — it is the same house and the same family.</p>
+      </div>
+      <div>
+        <ul class="contact-list">
+          <li><span class="contact__lang">Speaks English</span><span class="contact__who">Mariam</span></li>
+          <li><span class="contact__lang">Speaks Russian</span><span class="contact__who">Temraz</span></li>
+        </ul>
+      </div>
+      
+    </div>
+    <div class="wrap"><div class="rule-sun rule-sun--dot-only" role="separator" aria-hidden="true"><span></span></div></div>
+  </section>
+</main>
 
 <footer class="band band--paper2 band--tight">
-  <div class="wrap">
+  <div class="wrap footer-line">
     <p class="small">Guesthouse Gamarjoba · Ushguli (Zhibiani), Svaneti, Georgia</p>
+    <a class="small" href="#top">Back to the top ↑</a>
   </div>
 </footer>
-
 </body>
 </html>

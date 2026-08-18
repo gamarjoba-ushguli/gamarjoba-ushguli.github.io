@@ -54,6 +54,8 @@
   --f-num:     var(--f-body);
 
   /* ---- 文字サイズ（rem。最小 14px = 0.875rem を下回らない）--------------- */
+  /* 扉とギャラリーの頂点だけに使う。_docs/10-art-direction.md AD-1。 */
+  --t-hero:    clamp(2.5rem, 1.6rem + 4.4vw, 4.5rem);
   --t-display: clamp(2.00rem, 1.30rem + 3.0vw, 3.25rem);  /* h1 */
   --t-h2:      clamp(1.50rem, 1.15rem + 1.5vw, 2.10rem);
   --t-h3:      clamp(1.20rem, 1.05rem + 0.7vw, 1.45rem);

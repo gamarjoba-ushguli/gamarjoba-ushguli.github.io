@@ -51,6 +51,7 @@ a:hover { color: var(--c-ink); }
 :focus-visible {
   outline: var(--focus-w) solid var(--focus-c);
   outline-offset: var(--focus-offset);
+  box-shadow: 0 0 0 calc(var(--focus-w) * 2 + var(--focus-offset)) var(--c-ink);
 }
 
 .wrap { max-width: var(--wrap); margin-inline: auto; padding-inline: var(--wrap-pad); }
@@ -74,7 +75,10 @@ a:hover { color: var(--c-ink); }
 .btn--secondary:hover, .btn--secondary.is-hover { background: var(--c-paper-2); border-color: var(--c-ink); }
 .btn--quiet     { background: transparent; color: var(--c-teal); padding-inline: var(--s2); }
 .btn--quiet:hover, .btn--quiet.is-hover { color: var(--c-ink); text-decoration: underline; }
-.btn.is-focus { outline: var(--focus-w) solid var(--focus-c); outline-offset: var(--focus-offset); }
+.btn.is-focus {
+  outline: var(--focus-w) solid var(--focus-c); outline-offset: var(--focus-offset);
+  box-shadow: 0 0 0 calc(var(--focus-w) * 2 + var(--focus-offset)) var(--c-ink);
+}
 .btn[disabled], .btn.is-disabled {
   background: var(--c-stone); color: var(--c-ink-muted);
   border-color: transparent; cursor: not-allowed;
@@ -103,7 +107,10 @@ a:hover { color: var(--c-ink); }
 }
 .textarea { block-size: auto; min-height: calc(var(--ctrl-h) * 2.5); padding: var(--s3); resize: vertical; }
 .input:hover, .select:hover, .is-hover.input { border-color: var(--c-ink); }
-.input.is-focus, .select.is-focus { outline: var(--focus-w) solid var(--focus-c); outline-offset: var(--focus-offset); }
+.input.is-focus, .select.is-focus {
+  outline: var(--focus-w) solid var(--focus-c); outline-offset: var(--focus-offset);
+  box-shadow: 0 0 0 calc(var(--focus-w) * 2 + var(--focus-offset)) var(--c-ink);
+}
 .input[disabled], .select[disabled], .textarea[disabled] {
   background: var(--c-stone); color: var(--c-ink-muted); border-color: transparent; cursor: not-allowed;
 }
@@ -372,3 +379,179 @@ a:hover { color: var(--c-ink); }
 .btn-row{ margin-top: var(--s5); }
 .band--tight { padding-block: var(--s6); }
 .split .fig { margin-top: 0; }
+
+
+/* ===========================================================================
+   Gamarjoba 本ページのアートディレクション
+   _docs/10-art-direction.md — 「この家は額装する家である」
+   =========================================================================== */
+
+/* キーボード利用者だけに見える本文への近道 */
+.skip-link {
+  position: fixed; inset-block-start: var(--s3); inset-inline-start: var(--s3);
+  z-index: 10; transform: translateY(-200%);
+  padding: var(--s3) var(--s4); background: var(--c-ink); color: var(--c-paper);
+  border-radius: var(--r-md);
+}
+.skip-link:focus { transform: translateY(0); }
+
+/* 上帯。sticky にせず、320px の画面を奪わない */
+.site-head { border-bottom: 1px solid var(--c-rule); }
+.site-head__inner {
+  min-height: var(--s8); display: flex; align-items: center;
+  justify-content: space-between; gap: var(--s4);
+}
+.site-name {
+  font-family: var(--f-display); font-size: var(--t-h3); color: var(--c-ink);
+  text-decoration: none;
+}
+.site-head__ask {
+  min-height: var(--tap); display: inline-flex; align-items: center; gap: var(--s2);
+  font-size: var(--t-label); font-weight: var(--w-medium); text-decoration: none;
+}
+
+/* Fridon の絵の幾何だけを借りた静止した印 */
+.sun {
+  display: block; inline-size: var(--s9); block-size: auto;
+  margin-inline: auto;
+}
+.sun--small { inline-size: var(--s8); }
+.sun__rays { fill: var(--c-teal); }
+.sun__disc { fill: var(--c-gold); }
+.sun__drip { fill: var(--c-clay); }
+
+/* 金の点は装飾だけ。状態や意味を担わせない */
+.rule-sun {
+  display: flex; align-items: center; gap: var(--s4);
+  margin-block: var(--s5); border: 0;
+}
+.rule-sun::before, .rule-sun::after {
+  content: ""; flex: 1 1 0; block-size: 1px; background: var(--c-rule);
+}
+.rule-sun > span {
+  flex: none; inline-size: var(--s2); block-size: var(--s2);
+  border-radius: 50%; background: var(--c-gold);
+}
+.rule-sun--dot-only::before, .rule-sun--dot-only::after { background: transparent; }
+
+/* 扉：第一画面を文字と印だけで成立させる */
+.frontis { padding-block: var(--s7) var(--s6); text-align: center; }
+.frontis > .wrap > * { margin-inline: auto; }
+.frontis .eyebrow { margin-block-start: var(--s5); }
+.frontis__title {
+  font-size: var(--t-hero); max-inline-size: 14ch;
+  margin-block-start: var(--s3); text-wrap: balance;
+}
+.frontis .lede {
+  max-inline-size: 34ch; margin-block-start: var(--s5); color: var(--c-ink-2);
+}
+.frontis__actions {
+  display: flex; flex-wrap: wrap; gap: var(--s4);
+  justify-content: center; margin-block-start: var(--s6);
+}
+.frontis-facts {
+  list-style: none; margin: var(--s5) 0 0; padding: 0;
+  display: flex; flex-wrap: wrap; justify-content: center;
+  column-gap: var(--s3); row-gap: var(--s1); max-inline-size: none;
+  color: var(--c-ink-2); font-size: var(--t-label);
+}
+.frontis-facts li + li::before {
+  content: "\00B7"; color: var(--c-ink-3); margin-inline-end: var(--s3);
+}
+@media (min-width: 900px) { .frontis { padding-block-start: var(--s8); } }
+
+/* 家族の看板は、それ単独で静かに置く */
+.sign { padding-block-start: 0; }
+.plate--sign { margin-top: 0; }
+.plate--sign .plate__label { max-width: var(--measure); }
+
+.section-head { max-width: var(--measure); }
+.section-head .eyebrow + h2 { margin-top: var(--s2); }
+.section-head h2 + .lede { margin-top: var(--s4); }
+
+/* 部屋写真の未着枠。Fridon の「額」と混同しない、裸の写真スロット */
+.room-slot { margin: 0; }
+.room-slot__space {
+  aspect-ratio: 3 / 2; display: grid; place-items: center;
+  background: var(--c-paper-2); border-block: 1px solid var(--c-border);
+}
+.room-slot figcaption {
+  margin-top: var(--s3); color: var(--c-ink-3); font-size: var(--t-small);
+}
+
+/* 食卓：夜の不在を暗い面で受け止める */
+.table-story { display: grid; gap: var(--s8); }
+.pull { margin: 0; max-inline-size: var(--measure); }
+.pull::before {
+  content: ""; display: block; inline-size: var(--s7); block-size: 2px;
+  background: var(--c-gold); margin-block-end: var(--s5);
+}
+.pull p {
+  margin: 0; font-family: var(--f-display); font-size: var(--t-h2);
+  font-weight: var(--w-normal); line-height: var(--lh-snug); text-wrap: balance;
+}
+.table-story__body { max-width: var(--measure); }
+.band--moss .eyebrow { color: var(--c-gold-soft); }
+@media (min-width: 900px) {
+  .table-story { grid-template-columns: minmax(0, 1.15fr) minmax(0, .85fr); align-items: end; }
+}
+
+/* ギャラリー：文字の落差をページの感情的な頂点にする */
+.gallery { padding-block: var(--s9); }
+.peak { text-align: center; }
+.peak .eyebrow { margin-top: var(--s5); }
+.peak .eyebrow + h2 { margin-top: var(--s2); }
+.peak .lede, .peak .peak__small { max-inline-size: 34ch; margin-inline: auto; }
+.peak .lede { margin-block-start: var(--s5); }
+.peak__small {
+  margin-block-start: var(--s8); font-family: var(--f-display);
+  font-size: var(--t-h2); line-height: var(--lh-snug); color: var(--c-ink-2);
+}
+.statement--peak {
+  font-size: var(--t-hero); max-inline-size: 16ch; margin-inline: auto;
+  border-top: 0; padding-top: 0; margin-block-start: var(--s3);
+}
+.gallery__plate { max-width: var(--measure); margin-inline: auto; text-align: start; }
+.gallery__plate.plate--empty .plate__frame { aspect-ratio: 4 / 3; }
+
+/* 場所：全幅写真を「村の写真」として明示する */
+.where-intro { padding-block-end: var(--s6); }
+.place-image { margin: 0; background: var(--c-moss); }
+.place-image img {
+  display: block; width: 100%; max-height: 40vh; min-height: var(--s9);
+  object-fit: cover;
+}
+.place-image figcaption {
+  padding-block: var(--s3); color: var(--c-paper-2); font-size: var(--t-small);
+}
+.place-details { padding-block-start: var(--s7); }
+.place-facts { margin-top: 0; }
+@media (min-width: 760px) {
+  .place-details .split--wide { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); }
+}
+
+/* 連絡：番号とURLが未確認でも、下書きとして破綻させない */
+.ask__grid { display: grid; gap: var(--s8); }
+.ask__grid .eyebrow + h2 { margin-top: var(--s2); }
+.contact-list { margin-top: 0; }
+.contact__who { color: var(--c-paper); }
+@media (min-width: 760px) {
+  .ask__grid { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); align-items: end; }
+}
+
+.footer-line { display: flex; flex-wrap: wrap; justify-content: space-between; gap: var(--s4); }
+.footer-line p { margin: 0; }
+
+@media (max-width: 599px) {
+  .site-head__inner { min-height: var(--s7); }
+  .frontis__actions { align-items: stretch; }
+  .frontis__actions .btn--primary { flex-basis: 100%; }
+  .frontis-facts { display: grid; gap: var(--s1); }
+  .frontis-facts li + li::before { content: none; }
+  .sign { padding-block-end: var(--s7); }
+  .facts { margin-top: var(--s6); }
+  .table-story { gap: var(--s7); }
+  .peak__small { margin-block-start: var(--s7); }
+  .gallery__plate { margin-top: var(--s7); }
+  .ask__grid { gap: var(--s7); }
+}
